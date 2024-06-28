@@ -1,0 +1,13 @@
+{
+    "name": "my-fullstack-app",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "concurrently \"npm run server\" \"npm run client\"",
+      "server": "cd server && node server.js",
+      "client": "cd client && npm start"
+    }
+  }
+  
+ 
