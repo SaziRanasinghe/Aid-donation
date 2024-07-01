@@ -1,13 +1,13 @@
 const mysql = require('mysql2');
 
-const db = mysql.createConnection({
+const aid_nexus = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'Sasi@19991120',
-  database: 'aidnexus_db'
+  database: 'aid_nexus'
 });
 
-db.connect((err) => {
+aid_nexus.connect((err) => {
   if (err) {
     console.error('Error connecting to the database:', err);
     return;
@@ -15,4 +15,4 @@ db.connect((err) => {
   console.log('Connected to the MySQL database.');
 });
 
-module.exports = db;
+module.exports = aid_nexus;
