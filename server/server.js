@@ -20,6 +20,20 @@ app.get('/api/user', (req, res) => {
   });
 });
 
+app.post('/api/events', (req, res) => {
+  const { Eid, fname, description, datetime, active } = req.body;
+
+  const query = 'INSERT INTO events (Eid, fname, description, datetime, active) VALUES (?, ?, ?, ?, ?)';
+  db.query(query, [Eid, fname, description, datetime, active], (err, result) => {
+    if (err) {
+      console.error('Error inserting event:', err);
+      res.status(500).send('Server error');
+      return;
+    }
+    res.status(200).send('Event added successfully');
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
